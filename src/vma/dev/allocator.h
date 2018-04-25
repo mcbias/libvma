@@ -50,6 +50,7 @@ public:
 	ibv_mr* find_ibv_mr_by_ib_ctx(ib_ctx_handler *p_ib_ctx_h) const;
 private:
 	bool register_memory(size_t size, ib_ctx_handler *p_ib_ctx_h, uint64_t access);
+	void deregister_memory(ib_ctx_handler *p_ib_ctx_h);
 	bool hugetlb_alloc(size_t sz_bytes);
 	lkey_map_ib_ctx_map_t m_lkey_map_ib_ctx;
 	int m_shmid;
